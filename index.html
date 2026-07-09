@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dott.ssa Renata Sorricchio · Psicologa a Pescara</title>
-<meta name="description" content="Dott.ssa Renata Sorricchio, psicologa a Pescara. Riceve il venerdì in Piazza della Rinascita 42, su appuntamento. Richiedi una disponibilità su WhatsApp.">
+<meta name="description" content="Dott.ssa Renata Sorricchio, psicologa a Pescara. Sostegno psicologico, benessere a scuola, prevenzione e crescita personale. Riceve il venerdì presso il Centro Armonie, Piazza della Rinascita 49. Colloqui in presenza e online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #fdfbf8;
@@ -30,7 +30,7 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 0 28px; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
 
   /* Hero / lockup — riprende la composizione del logo */
   .hero { text-align: center; padding: 64px 0 52px; }
@@ -52,10 +52,20 @@
     opacity: 0.85;
     margin-top: 8px;
   }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(19px, 4.4vw, 24px);
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 30em;
+    margin: 34px auto 0;
+  }
   .hero .role {
-    font-size: 18px;
+    font-size: 17px;
     color: var(--ink-soft);
-    margin: 34px 0;
+    margin: 18px 0 34px;
   }
   .hero .role strong { color: var(--ink); font-weight: 500; }
 
@@ -83,7 +93,7 @@
   }
 
   /* Sections */
-  section { padding: 52px 0; border-top: 1px solid var(--line); }
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
   h2 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
@@ -92,37 +102,77 @@
   }
   .about p { color: var(--ink-soft); margin-bottom: 14px; }
   .about p strong { color: var(--ink); font-weight: 500; }
-
-  /* Services */
-  .services ul { list-style: none; margin-top: 6px; }
-  .services li {
+  .about .credo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 21px;
+    color: var(--brown);
+    margin: 22px 0;
+  }
+  .audience {
     display: flex;
-    align-items: baseline;
-    gap: 14px;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 17px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
   }
-  .services li:last-child { border-bottom: none; }
-  .services li::before {
-    content: "";
-    width: 6px; height: 6px;
-    background: var(--brown);
-    border-radius: 50%;
-    flex-shrink: 0;
-    position: relative;
-    top: -3px;
+  .audience span {
+    background: var(--brown-soft);
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 100px;
   }
-  .services .hint { font-size: 14px; color: var(--ink-soft); margin-top: 16px; }
+
+  /* Ambiti — griglia con icone come nel volantino */
+  .ambiti-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px 22px;
+    margin-top: 34px;
+    text-align: center;
+  }
+  @media (max-width: 560px) { .ambiti-grid { grid-template-columns: repeat(2, 1fr); } }
+  .ambito svg { display: block; margin: 0 auto 12px; }
+  .ambito h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 6px;
+  }
+  .ambito p { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .ambiti .hint { font-size: 14px; color: var(--ink-soft); margin-top: 34px; text-align: center; }
+
+  /* Pull quote */
+  .quote-band {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    padding: 56px 0;
+    text-align: center;
+  }
+  .quote-band blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(23px, 5vw, 30px);
+    line-height: 1.4;
+    color: var(--brown);
+    max-width: 20em;
+    margin: 0 auto;
+  }
+  .quote-band .qnote { margin-top: 14px; font-size: 14px; color: var(--ink-soft); }
 
   /* Where */
   .where-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
     margin-top: 6px;
   }
-  @media (max-width: 520px) { .where-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .where-grid { grid-template-columns: 1fr; } }
   .where-box {
     background: var(--bg-soft);
     border-radius: 16px;
@@ -151,8 +201,14 @@
   /* Final CTA */
   .final-cta { text-align: center; }
   .final-cta h2 { margin-bottom: 10px; }
-  .final-cta p { color: var(--ink-soft); margin-bottom: 28px; }
+  .final-cta > p { color: var(--ink-soft); margin-bottom: 28px; }
   .spiral-divider { display: block; margin: 0 auto 26px; opacity: 0.75; }
+  .alt-contacts {
+    margin-top: 26px;
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .alt-contacts a { color: var(--brown); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--brown); }
 
   footer {
     border-top: 1px solid var(--line);
@@ -160,6 +216,7 @@
     text-align: center;
     font-size: 13px;
     color: var(--ink-soft);
+    line-height: 1.8;
   }
   footer .sig {
     font-family: 'Hanken Grotesk', sans-serif;
@@ -170,13 +227,14 @@
     color: var(--brown);
     margin-bottom: 6px;
   }
+  footer a { color: var(--ink-soft); }
 </style>
 </head>
 <body>
 
 <main>
-  <div class="wrap">
 
+  <div class="wrap">
     <div class="hero">
       <!-- Logo: groviglio che si scioglie in spirale -->
       <svg class="logo-mark" viewBox="0 0 220 110" fill="none" aria-hidden="true">
@@ -202,7 +260,8 @@
       <div class="logo-name">Dott.ssa Renata Sorricchio</div>
       <div class="logo-ordine">Ordine delle Psicologhe e degli Psicologi d'Abruzzo n. 1191</div>
 
-      <p class="role"><strong>Psicologa</strong> · Ricevo a Pescara il venerdì, su appuntamento</p>
+      <p class="tagline">Uno spazio di ascolto per affrontare insieme difficoltà personali, relazionali, familiari e scolastiche.</p>
+      <p class="role"><strong>Psicologa</strong> · Ricevo a Pescara il venerdì, su appuntamento · In presenza e online</p>
       <a class="wa-btn" href="https://wa.me/393293987390?text=Buongiorno%20dott.ssa%20Sorricchio%2C%20vorrei%20chiedere%20una%20disponibilit%C3%A0%20per%20un%20colloquio." target="_blank" rel="noopener">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 7c0 5.44-4.44 9.87-9.9 9.87M20.47 3.55A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.47-8.4"/></svg>
         Scrivimi su WhatsApp
@@ -212,33 +271,110 @@
 
     <section class="about">
       <h2>Chi sono</h2>
-      <p>Sono <strong>Renata Sorricchio</strong>, psicologa iscritta all'Ordine delle Psicologhe e degli Psicologi d'Abruzzo (n. 1191). Ricevo a <strong>Pescara</strong>, nel mio studio in Piazza della Rinascita.</p>
-      <p>Accompagno le persone in percorsi individuali, in uno spazio riservato e senza fretta: il lavoro psicologico ha bisogno di tempo, ascolto e continuità. Per questo scelgo di seguire poche persone alla volta.</p>
+      <p>Sono <strong>Renata Sorricchio</strong>, psicologa. Ricevo a <strong>Pescara</strong>, presso il Centro per il Benessere Psicofisico <strong>Armonie</strong>, in Piazza della Rinascita.</p>
+      <p>Non serve stare male per rivolgersi a una psicologa. Si può iniziare un percorso anche per <strong>conoscersi meglio</strong>, dare un senso a ciò che si è vissuto, <strong>prevenire</strong> invece che curare: fermarsi a capire, prima che il peso diventi troppo.</p>
+      <p class="credo">«Prendersi cura di sé non è egoismo: è un inizio.»</p>
+      <p>Lavoro con uno sguardo <strong>sistemico-relazionale</strong>: le difficoltà non sono problemi da correggere, ma segnali da comprendere dentro le relazioni — in famiglia, a scuola, nella coppia. Nel lavoro integro tecniche di <strong>rilassamento</strong>, <strong>training autogeno</strong> e pratiche di <strong>consapevolezza</strong>. E scelgo di seguire poche persone alla volta: il lavoro psicologico ha bisogno di tempo, ascolto e continuità.</p>
+      <div class="audience">
+        <span>Bambini e adolescenti</span>
+        <span>Genitori</span>
+        <span>Coppie e famiglie</span>
+        <span>Adulti</span>
+      </div>
     </section>
 
-    <section class="services">
-      <h2>Di cosa mi occupo</h2>
-      <ul>
-        <li>Colloqui psicologici individuali per adulti</li>
-        <li>Sostegno nei momenti di cambiamento e difficoltà</li>
-        <li>Gestione di ansia e stress</li>
-        <li>Percorsi di consapevolezza e crescita personale</li>
-        <li>Colloqui online, quando lo studio è lontano</li>
-      </ul>
+    <section class="ambiti">
+      <h2 style="text-align:center">Di cosa mi occupo</h2>
+      <div class="ambiti-grid">
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="16" cy="14" r="5"/>
+            <path d="M7 34 c0-6 4-9 9-9 s9 3 9 9"/>
+            <circle cx="31" cy="17" r="4"/>
+            <path d="M26 33 c0-4.5 2.2-7 6-7 s6 2.5 6 7"/>
+          </svg>
+          <h3>Sostegno psicologico</h3>
+          <p>Per bambini, adolescenti e adulti</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 33 h20 M8 29 h20 M8 25 h20"/>
+            <path d="M8 33 c0 2 1.5 3.5 3.5 3.5 h17 M8 25 c0-2 1.5-3.5 3.5-3.5 h16.5 v15"/>
+            <circle cx="32" cy="15" r="5"/>
+            <path d="M32 10 c0-2.5 1.5-4 3.5-4.5"/>
+          </svg>
+          <h3>Benessere a scuola</h3>
+          <p>Difficoltà scolastiche, genitori e insegnanti</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 27 c-4-3.5-8-6.5-8-10.5 c0-2.8 2.2-5 5-5 c1.4 0 2.4.6 3 1.6 c.6-1 1.6-1.6 3-1.6 c2.8 0 5 2.2 5 5 c0 4-4 7-8 10.5z"/>
+            <path d="M8 30 c3 3.5 8 5.5 14 5.5 s11-2 14-5.5"/>
+          </svg>
+          <h3>Ascolto empatico</h3>
+          <p>Uno spazio riservato, senza giudizio</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 21 c0-8 6.5-13 14-13 s14 5 14 13 z"/>
+            <path d="M22 8 v-2 M22 21 v11 c0 2.5 1.8 4 4 4 s4-1.5 4-4"/>
+          </svg>
+          <h3>Prevenzione</h3>
+          <p>Intervenire presto è prendersi cura meglio</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 34 c-3-2-5-6-5-10 c0-4.5 2.5-8.5 5-10 c2.5 1.5 5 5.5 5 10 c0 4-2 8-5 10z"/>
+            <path d="M22 34 c-5 0-10-2.5-12-7 c4-1 8 0 12 3 M22 34 c5 0 10-2.5 12-7 c-4-1-8 0-12 3"/>
+          </svg>
+          <h3>Benessere psicofisico</h3>
+          <p>Rilassamento, training autogeno, consapevolezza</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 36 v-14"/>
+            <path d="M22 26 c0-6-4-9-9-9 c0 6 4 9 9 9z"/>
+            <path d="M22 22 c0-6 4-9 9-9 c0 6-4 9-9 9z"/>
+            <path d="M12 36 h20"/>
+          </svg>
+          <h3>Crescita personale</h3>
+          <p>Conoscersi meglio, dare significato alla propria storia</p>
+        </div>
+
+      </div>
       <p class="hint">Il primo contatto serve a capire insieme se e come posso esserti utile.</p>
     </section>
+  </div>
 
+  <div class="quote-band">
+    <div class="wrap">
+      <blockquote>«Quando un bambino sta male, sta parlando per tutta la famiglia.»</blockquote>
+      <p class="qnote">Per questo lavoro anche con i genitori, non solo con chi porta il sintomo.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
     <section class="where">
       <h2>Dove ricevo</h2>
       <div class="where-grid">
         <div class="where-box">
           <h3>Studio</h3>
-          <p>Piazza della Rinascita 42<span>Pescara — pieno centro</span></p>
-          <a href="https://maps.google.com/?q=Piazza+della+Rinascita+42,+Pescara" target="_blank" rel="noopener">Apri in Google Maps</a>
+          <p>Centro per il Benessere Psicofisico Armonie<span>Piazza della Rinascita 49, Pescara — pieno centro</span></p>
+          <a href="https://maps.google.com/?q=Piazza+della+Rinascita+49,+Pescara" target="_blank" rel="noopener">Apri in Google Maps</a>
         </div>
         <div class="where-box">
           <h3>Orari</h3>
           <p>Solo il venerdì<span>Su appuntamento — scrivimi per concordare l'orario</span></p>
+        </div>
+        <div class="where-box">
+          <h3>Online</h3>
+          <p>Colloqui anche da remoto<span>Quando venire in studio non è possibile</span></p>
         </div>
       </div>
     </section>
@@ -253,15 +389,18 @@
         <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.68-1.63-.93-2.23-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.11 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 7c0 5.44-4.44 9.87-9.9 9.87M20.47 3.55A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.94L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.9a11.82 11.82 0 0 0-3.47-8.4"/></svg>
         Scrivimi su WhatsApp
       </a>
+      <p class="alt-contacts">Oppure: <a href="tel:+393293987390">329 39 87 390</a> · <a href="mailto:sorricchio.renata@gmail.com">sorricchio.renata@gmail.com</a></p>
     </section>
-
   </div>
+
 </main>
 
 <footer>
   <div class="wrap">
     <div class="sig">Dott.ssa Renata Sorricchio</div>
-    <p>Psicologa · Ordine delle Psicologhe e degli Psicologi d'Abruzzo n. 1191<br>Piazza della Rinascita 42, Pescara · Riceve il venerdì su appuntamento</p>
+    <p>Psicologa · Ordine delle Psicologhe e degli Psicologi d'Abruzzo n. 1191<br>
+    Centro per il Benessere Psicofisico Armonie · Piazza della Rinascita 49, Pescara<br>
+    Riceve il venerdì su appuntamento · <a href="mailto:sorricchio.renata@gmail.com">sorricchio.renata@gmail.com</a></p>
   </div>
 </footer>
 

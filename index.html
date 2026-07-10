@@ -663,11 +663,15 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
 
 <script>
 (function () {
-  // Progressive enhancement: senza JS il contenuto resta visibile (nessuna classe reveal nel markup).
+  // Progressive enhancement + a prova di guasto:
+  // - senza JS nulla è nascosto (nessuna classe reveal nel markup)
+  // - ciò che è già visibile all'apertura NON viene mai nascosto (niente hero bianco)
+  // - rete di sicurezza: se l'IntersectionObserver non scatta, tutto viene comunque rivelato
   if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
+  var vh = window.innerHeight || document.documentElement.clientHeight;
   var groups = [
-    ['.hero > *', 70],
+    ['.hero > *', 60],
     ['.ambiti-grid > .ambito', 70]
   ];
   var singles = [
@@ -678,38 +682,47 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
     '.final-cta > *', 'footer .sig', 'footer p'
   ];
 
-  var list = [];
-  function mark(el, delay) {
-    if (el.classList.contains('reveal')) return;
-    el.classList.add('reveal');
-    if (delay) el.style.transitionDelay = delay + 'ms';
-    list.push(el);
-  }
+  var candidates = [];
+  function add(el, delay) { if (el.__seen) return; el.__seen = true; candidates.push([el, delay]); }
   groups.forEach(function (g) {
-    document.querySelectorAll(g[0]).forEach(function (el, i) { mark(el, i * g[1]); });
+    document.querySelectorAll(g[0]).forEach(function (el, i) { add(el, i * g[1]); });
   });
   singles.forEach(function (sel) {
-    document.querySelectorAll(sel).forEach(function (el) { mark(el, 0); });
+    document.querySelectorAll(sel).forEach(function (el) { add(el, 0); });
   });
 
-  if (!('IntersectionObserver' in window)) {
-    list.forEach(function (el) { el.classList.remove('reveal'); });
-    return;
+  function show(el) {
+    if (el.classList.contains('in')) return;
+    el.classList.add('in');
+    var d = parseFloat(el.style.transitionDelay) || 0;
+    setTimeout(function () { el.classList.remove('reveal', 'in'); el.style.transitionDelay = ''; }, d + 900);
   }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      var el = e.target;
-      el.classList.add('in');
-      io.unobserve(el);
-      // Pulizia: dopo l'animazione rimuovo le classi così hover & co. tornano naturali.
-      setTimeout(function () {
-        el.classList.remove('reveal', 'in');
-        el.style.transitionDelay = '';
-      }, 1100);
+
+  var toObserve = [];
+  candidates.forEach(function (pair) {
+    var el = pair[0], delay = pair[1];
+    // già (quasi) visibile all'apertura → lascialo com'è, niente animazione, niente rischio
+    if (el.getBoundingClientRect().top < vh * 0.92) return;
+    el.classList.add('reveal');
+    if (delay) el.style.transitionDelay = delay + 'ms';
+    toObserve.push(el);
+  });
+
+  if (!toObserve.length) return;
+
+  var io = ('IntersectionObserver' in window) ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' }) : null;
+
+  if (io) toObserve.forEach(function (el) { io.observe(el); });
+  else toObserve.forEach(function (el) { el.classList.remove('reveal'); });
+
+  // Rete di sicurezza: se dopo 2.5s qualcosa è ancora nascosto (IO assente/lento), rivelalo.
+  setTimeout(function () {
+    toObserve.forEach(function (el) {
+      if (!el.classList.contains('in')) { if (io) io.unobserve(el); show(el); }
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  list.forEach(function (el) { io.observe(el); });
+  }, 2500);
 })();
 </script>
 

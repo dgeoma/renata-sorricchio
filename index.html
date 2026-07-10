@@ -258,6 +258,27 @@
     margin-bottom: 6px;
   }
   footer a { color: var(--ink-soft); }
+
+  /* Micro-interazioni */
+  .ambito { transition: transform 0.3s ease; }
+  .ambito:hover { transform: translateY(-4px); }
+  .hero-photo img { transition: transform 0.5s ease, box-shadow 0.5s ease; }
+  .hero-photo:hover img { transform: scale(1.012); box-shadow: 0 18px 48px rgba(58, 46, 38, 0.18); }
+
+  /* Scroll reveal — blur-fade-up (adattato dal pattern "Blur Fade" di 21st.dev, in vanilla) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+    transition: opacity 0.75s cubic-bezier(0.22, 0.61, 0.24, 1),
+                transform 0.75s cubic-bezier(0.22, 0.61, 0.24, 1),
+                filter 0.75s ease;
+    will-change: opacity, transform, filter;
+  }
+  .reveal.in { opacity: 1; transform: none; filter: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+  }
 </style>
 </head>
 <body>
@@ -639,6 +660,58 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
     Centro per il Benessere Psicofisico Armonie · Piazza della Rinascita 49, 65122 Pescara</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  // Progressive enhancement: senza JS il contenuto resta visibile (nessuna classe reveal nel markup).
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var groups = [
+    ['.hero > *', 70],
+    ['.ambiti-grid > .ambito', 70]
+  ];
+  var singles = [
+    '.about > p', '.about .credo', '.audience',
+    'section > h2', '.ambiti .hint',
+    '.quote-band blockquote', '.quote-band .qnote',
+    '.map-card', '.map-caption', '.modality',
+    '.final-cta > *', 'footer .sig', 'footer p'
+  ];
+
+  var list = [];
+  function mark(el, delay) {
+    if (el.classList.contains('reveal')) return;
+    el.classList.add('reveal');
+    if (delay) el.style.transitionDelay = delay + 'ms';
+    list.push(el);
+  }
+  groups.forEach(function (g) {
+    document.querySelectorAll(g[0]).forEach(function (el, i) { mark(el, i * g[1]); });
+  });
+  singles.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) { mark(el, 0); });
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    list.forEach(function (el) { el.classList.remove('reveal'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target;
+      el.classList.add('in');
+      io.unobserve(el);
+      // Pulizia: dopo l'animazione rimuovo le classi così hover & co. tornano naturali.
+      setTimeout(function () {
+        el.classList.remove('reveal', 'in');
+        el.style.transitionDelay = '';
+      }, 1100);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  list.forEach(function (el) { io.observe(el); });
+})();
+</script>
 
 </body>
 </html>

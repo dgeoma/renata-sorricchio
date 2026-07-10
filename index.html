@@ -193,7 +193,24 @@
     border-bottom: 1px solid var(--brown);
     white-space: nowrap;
   }
-  .where-note { font-size: 14px; color: var(--ink-soft); margin-top: 18px; }
+  .modality {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .modality span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brown-soft);
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 100px;
+  }
+  .modality span svg { flex-shrink: 0; }
 
   /* Final CTA */
   .final-cta { text-align: center; }
@@ -560,7 +577,20 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
         </div>
         <a href="https://www.google.com/maps/search/?api=1&query=Piazza+della+Rinascita+49,+65122+Pescara" target="_blank" rel="noopener">Apri in Google Maps</a>
       </div>
-      <p class="where-note">Ricevo su appuntamento, in presenza e online — per la disponibilità scrivimi su WhatsApp.</p>
+      <div class="modality">
+        <span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f4e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="17" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+          Su appuntamento
+        </span>
+        <span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f4e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21.5s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"/><circle cx="12" cy="10.5" r="2.5"/></svg>
+          In presenza
+        </span>
+        <span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6f4e3c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20.5h8M12 16.5v4"/></svg>
+          Online
+        </span>
+      </div>
     </section>
 
     <section class="final-cta">
@@ -583,8 +613,7 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
   <div class="wrap">
     <div class="sig">Dott.ssa Renata Sorricchio</div>
     <p>Psicologa clinica · Ordine delle Psicologhe e degli Psicologi d'Abruzzo n. 1191<br>
-    Centro per il Benessere Psicofisico Armonie · Piazza della Rinascita 49, 65122 Pescara<br>
-    Riceve su appuntamento · <a href="mailto:sorricchio.renata@gmail.com">sorricchio.renata@gmail.com</a></p>
+    Centro per il Benessere Psicofisico Armonie · Piazza della Rinascita 49, 65122 Pescara</p>
   </div>
 </footer>
 

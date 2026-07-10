@@ -279,6 +279,21 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
   }
+
+  /* Entrata soft dell'hero al caricamento — puro CSS (fill: both → si completa sempre, mai pagina vuota) */
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes heroRise {
+      from { opacity: 0; transform: translateY(16px); filter: blur(5px); }
+      to   { opacity: 1; transform: none; filter: none; }
+    }
+    .hero > *:not(.hero-photo) { animation: heroRise 0.8s cubic-bezier(0.22, 0.61, 0.24, 1) both; }
+    .hero > .logo-name   { animation-delay: 0.08s; }
+    .hero > .logo-ordine { animation-delay: 0.14s; }
+    .hero > .tagline     { animation-delay: 0.20s; }
+    .hero > .role        { animation-delay: 0.28s; }
+    .hero > .wa-btn      { animation-delay: 0.34s; }
+    .hero > .wa-note     { animation-delay: 0.40s; }
+  }
 </style>
 </head>
 <body>

@@ -310,6 +310,36 @@
     .hero > .wa-btn      { animation-delay: 0.34s; }
     .hero > .wa-note     { animation-delay: 0.40s; }
   }
+
+  /* Contenuti estesi (feedback Renata 2026-07-13) */
+  .about .lead { color: var(--ink); font-size: 17px; }
+  .areas { display: grid; gap: 16px; margin-top: 26px; }
+  .area { background: var(--bg-soft); border-radius: 16px; padding: 26px 26px 28px; }
+  .area-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .area-head svg { flex-shrink: 0; }
+  .area-head h3 { font-family: 'Cormorant Garamond', serif; font-size: 25px; font-weight: 500; color: var(--ink); }
+  .area > p { color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+  .svc-list { list-style: none; display: grid; gap: 9px; }
+  .svc-list li { position: relative; padding-left: 20px; font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .svc-list li::before { content: ""; position: absolute; left: 3px; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--brown); }
+  .area-quote { margin: 16px 0 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: var(--brown); }
+
+  .method { display: grid; margin-top: 24px; }
+  .step { display: flex; gap: 18px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .step:last-child { border-bottom: none; }
+  .step .num { flex-shrink: 0; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--brown); color: var(--brown); font-family: 'Cormorant Garamond', serif; font-size: 21px; display: flex; align-items: center; justify-content: center; }
+  .step .body h3 { font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
+  .step .body p { font-size: 15px; color: var(--ink-soft); }
+
+  .skills-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-top: 22px; }
+  @media (max-width: 560px) { .skills-list { grid-template-columns: 1fr; } }
+  .skills-list li { position: relative; padding-left: 26px; font-size: 15px; color: var(--ink); line-height: 1.5; }
+  .skills-list li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--brown); font-weight: 700; }
+
+  .values { background: var(--brown-soft); border-radius: 16px; padding: 26px 28px; margin-top: 8px; }
+  .values p { color: var(--ink); font-size: 16px; }
+  .values p + p { margin-top: 12px; }
+  .values p strong { color: var(--brown); }
 </style>
 </head>
 <body>
@@ -549,135 +579,146 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
   </div>
 
   <div class="wrap">
-    <section class="ambiti">
-      <h2 style="text-align:center">Di cosa mi occupo</h2>
-      <div class="ambiti-grid">
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="16" cy="14" r="5"/>
-            <path d="M7 34 c0-6 4-9 9-9 s9 3 9 9"/>
-            <circle cx="31" cy="17" r="4"/>
-            <path d="M26 33 c0-4.5 2.2-7 6-7 s6 2.5 6 7"/>
-          </svg>
-          <h3>Sostegno psicologico</h3>
-          <p>Per bambini, adolescenti e adulti</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M8 33 h20 M8 29 h20 M8 25 h20"/>
-            <path d="M8 33 c0 2 1.5 3.5 3.5 3.5 h17 M8 25 c0-2 1.5-3.5 3.5-3.5 h16.5 v15"/>
-            <circle cx="32" cy="15" r="5"/>
-            <path d="M32 10 c0-2.5 1.5-4 3.5-4.5"/>
-          </svg>
-          <h3>Benessere a scuola</h3>
-          <p>Difficoltà scolastiche, genitori e insegnanti</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 27 c-4-3.5-8-6.5-8-10.5 c0-2.8 2.2-5 5-5 c1.4 0 2.4.6 3 1.6 c.6-1 1.6-1.6 3-1.6 c2.8 0 5 2.2 5 5 c0 4-4 7-8 10.5z"/>
-            <path d="M8 30 c3 3.5 8 5.5 14 5.5 s11-2 14-5.5"/>
-          </svg>
-          <h3>Ascolto empatico</h3>
-          <p>Uno spazio riservato, senza giudizio</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M8 21 c0-8 6.5-13 14-13 s14 5 14 13 z"/>
-            <path d="M22 8 v-2 M22 21 v11 c0 2.5 1.8 4 4 4 s4-1.5 4-4"/>
-          </svg>
-          <h3>Prevenzione</h3>
-          <p>Intervenire presto è prendersi cura meglio</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 34 c-3-2-5-6-5-10 c0-4.5 2.5-8.5 5-10 c2.5 1.5 5 5.5 5 10 c0 4-2 8-5 10z"/>
-            <path d="M22 34 c-5 0-10-2.5-12-7 c4-1 8 0 12 3 M22 34 c5 0 10-2.5 12-7 c-4-1-8 0-12 3"/>
-          </svg>
-          <h3>Benessere psicofisico</h3>
-          <p>Rilassamento, training autogeno, consapevolezza</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 36 v-14"/>
-            <path d="M22 26 c0-6-4-9-9-9 c0 6 4 9 9 9z"/>
-            <path d="M22 22 c0-6 4-9 9-9 c0 6-4 9-9 9z"/>
-            <path d="M12 36 h20"/>
-          </svg>
-          <h3>Crescita personale</h3>
-          <p>Conoscersi meglio, dare significato alla propria storia</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 11 h26 a3 3 0 0 1 3 3 v12 a3 3 0 0 1-3 3 H21 l-7 5 v-5 H9 a3 3 0 0 1-3-3 V14 a3 3 0 0 1 3-3z"/>
-            <path d="M22 25.5 c-2.6-1.9-4.6-3.4-4.6-5.5 c0-1.4 1.1-2.5 2.5-2.5 c.85 0 1.5.4 2.1 1.1 c.6-.7 1.25-1.1 2.1-1.1 c1.4 0 2.5 1.1 2.5 2.5 c0 2.1-2 3.6-4.6 5.5z"/>
-          </svg>
-          <h3>Alfabetizzazione emotiva</h3>
-          <p>Emozioni e competenze socio-relazionali</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="15" cy="13" r="4"/>
-            <path d="M8 34 v-5 c0-3.9 3.1-7 7-7 s7 3.1 7 7 v5"/>
-            <circle cx="31" cy="18" r="3"/>
-            <path d="M26 34 v-4 c0-2.8 2.2-5 5-5 s5 2.2 5 5 v4"/>
-            <path d="M21 30 h5"/>
-          </svg>
-          <h3>Supporto alla genitorialità</h3>
-          <p>Accompagnare chi cresce dei figli</p>
-        </div>
-
-        <div class="ambito">
-          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="22" cy="13" r="4"/>
-            <circle cx="12" cy="17" r="3.2"/>
-            <circle cx="32" cy="17" r="3.2"/>
-            <path d="M15 34 c0-4.5 3.2-7.5 7-7.5 s7 3 7 7.5"/>
-            <path d="M8 33 c0-3.6 2.4-6 5.5-6.2"/>
-            <path d="M36 33 c0-3.6-2.4-6-5.5-6.2"/>
-          </svg>
-          <h3>Disagio scolastico e inclusione</h3>
-          <p>Prevenzione e promozione dell'inclusione</p>
-        </div>
-
-      </div>
-      <p class="hint">Il primo contatto serve a capire insieme se e come posso esserti utile.</p>
-    </section>
-  </div>
-
-  <div class="wrap">
     <section class="about">
-      <h2>Il mio approccio</h2>
-      <p class="section-sub">Prevenire prima che curare</p>
-      <p>Le relazioni sono il luogo in cui cresciamo, impariamo e affrontiamo le sfide della vita. Quando una relazione entra in difficoltà, può diventare fonte di sofferenza; quando viene compresa e valorizzata, può trasformarsi in una <strong>risorsa di benessere</strong>.</p>
-      <p>Non serve stare male per rivolgersi a una psicologa. Si può iniziare un percorso anche per <strong>conoscersi meglio</strong>, dare un senso a ciò che si è vissuto, <strong>prevenire</strong> invece che curare: fermarsi a capire, prima che il peso diventi troppo.</p>
-      <p class="credo">«Prendersi cura di sé non è egoismo, ma un gesto di amore verso se stessi: il primo passo per stare bene insieme agli altri.»</p>
-      <p>Lavoro con uno sguardo <strong>sistemico-relazionale</strong>: le difficoltà non sono problemi da correggere, ma segnali da comprendere dentro le relazioni — in famiglia, a scuola, nella coppia. Nel lavoro integro tecniche di <strong>rilassamento</strong>, <strong>training autogeno</strong> e pratiche di <strong>consapevolezza</strong>.</p>
-      <p>Accompagno <strong>bambini, adolescenti, adulti, coppie, famiglie e comunità educative</strong> a ritrovare nuovi equilibri, promuovendo il benessere psicologico attraverso l'ascolto, la prevenzione e la cura delle relazioni.</p>
-      <p class="credo">«Dietro ogni difficoltà c'è una storia che merita di essere compresa. Ogni comportamento è una comunicazione che non ha ancora trovato parole.»</p>
-      <p class="credo">«Ogni storia merita di essere raccontata.»</p>
+      <h2>Benvenuto</h2>
+      <p>Le relazioni sono il luogo in cui cresciamo, impariamo e affrontiamo le sfide della vita. Quando una relazione entra in difficolt&agrave;, pu&ograve; diventare fonte di sofferenza; quando viene compresa e valorizzata, pu&ograve; trasformarsi in una <strong>risorsa di benessere</strong>.</p>
+      <p>Accompagno <strong>bambini, adolescenti, adulti, coppie, famiglie e comunit&agrave; educative</strong> a ritrovare nuovi equilibri, promuovendo il benessere psicologico attraverso l'ascolto, la prevenzione e la cura delle relazioni.</p>
+      <p class="credo">&laquo;Ogni storia merita di essere ascoltata. Ogni relazione pu&ograve; ritrovare il proprio equilibrio.&raquo;</p>
       <div class="audience">
         <span>Bambini e adolescenti</span>
         <span>Genitori</span>
         <span>Coppie e famiglie</span>
         <span>Adulti</span>
-        <span>Comunità educative</span>
+        <span>Comunit&agrave; educative</span>
       </div>
     </section>
   </div>
 
-  <div class="quote-band">
-    <div class="wrap">
-      <blockquote>«Quando un bambino sta male, sta parlando per tutta la famiglia.»</blockquote>
-      <p class="qnote">Per questo lavoro anche con i genitori, non solo con chi porta il sintomo.</p>
-    </div>
+  <div class="wrap">
+    <section class="about">
+      <h2>Chi sono</h2>
+      <p>Sono una <strong>psicologa</strong> che lavora con una prospettiva <strong>clinica, sistemico-relazionale</strong> e orientata alla promozione della salute psicologica.</p>
+      <p>Credo che ogni persona, ogni famiglia e ogni gruppo possiedano <strong>risorse</strong> che possono essere riconosciute e valorizzate. Il mio compito &egrave; accompagnare questo percorso attraverso uno spazio di ascolto <strong>accogliente, competente e privo di giudizio</strong>.</p>
+      <p>Nel lavoro integro tecniche di <strong>rilassamento</strong>, <strong>training autogeno</strong> e pratiche di <strong>consapevolezza</strong>.</p>
+      <p class="credo">&laquo;Prendersi cura di s&eacute; non &egrave; egoismo, ma un gesto di amore verso se stessi: il primo passo per stare bene insieme agli altri.&raquo;</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="ambiti-rich">
+      <h2 style="text-align:center">Di cosa mi occupo</h2>
+      <div class="areas">
+
+        <div class="area">
+          <div class="area-head"><svg width="34" height="34" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="15" cy="13" r="4"/><path d="M8 34 v-5 c0-3.9 3.1-7 7-7 s7 3.1 7 7 v5"/><circle cx="31" cy="18" r="3"/><path d="M26 34 v-4 c0-2.8 2.2-5 5-5 s5 2.2 5 5 v4"/><path d="M21 30 h5"/></svg><h3>Bambini e famiglie</h3></div>
+          <p>Accompagno bambini e genitori nella comprensione delle difficolt&agrave; emotive e relazionali, sostenendo lo sviluppo di relazioni familiari pi&ugrave; serene e funzionali.</p>
+          <ul class="svc-list">
+          <li>Difficolt&agrave; emotive</li>
+          <li>Ansia e gestione della rabbia</li>
+          <li>Difficolt&agrave; relazionali</li>
+          <li>Conflitti tra fratelli e tra pari</li>
+          <li>Bullismo e dinamiche di esclusione</li>
+          <li>Separazione dei genitori</li>
+          <li>Sostegno alla genitorialit&agrave;</li>
+          </ul>
+          <p class="area-quote">&laquo;Quando un bambino sta male, sta parlando per tutta la famiglia.&raquo;</p>
+        </div>
+
+        <div class="area">
+          <div class="area-head"><svg width="34" height="34" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 33 h20 M8 29 h20 M8 25 h20"/><path d="M8 33 c0 2 1.5 3.5 3.5 3.5 h17 M8 25 c0-2 1.5-3.5 3.5-3.5 h16.5 v15"/><circle cx="32" cy="15" r="5"/><path d="M32 10 c0-2.5 1.5-4 3.5-4.5"/></svg><h3>Psicologia scolastica</h3></div>
+          <p>Collaboro con scuole, insegnanti e famiglie per promuovere il benessere psicologico e prevenire il disagio.</p>
+          <ul class="svc-list">
+          <li>Sportelli di ascolto psicologico</li>
+          <li>Consulenza a docenti e genitori</li>
+          <li>Osservazione delle dinamiche di classe</li>
+          <li>Laboratori di alfabetizzazione emotiva</li>
+          <li>Percorsi di educazione socio-emotiva</li>
+          <li>Interventi per la gestione dei conflitti</li>
+          <li>Prevenzione del bullismo e promozione dell'inclusione</li>
+          </ul>
+          <p class="area-quote">&laquo;Non esistono classi difficili. Esistono gruppi che hanno bisogno di trovare un nuovo equilibrio.&raquo;</p>
+        </div>
+
+        <div class="area">
+          <div class="area-head"><svg width="34" height="34" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 36 v-14"/><path d="M22 26 c0-6-4-9-9-9 c0 6 4 9 9 9z"/><path d="M22 22 c0-6 4-9 9-9 c0 6-4 9-9 9z"/><path d="M12 36 h20"/></svg><h3>Adulti</h3></div>
+          <p>Offro uno spazio di ascolto e consulenza per affrontare momenti di cambiamento e difficolt&agrave; personale.</p>
+          <ul class="svc-list">
+          <li>Ansia e gestione dello stress</li>
+          <li>Autostima</li>
+          <li>Crescita personale</li>
+          <li>Cambiamenti di vita</li>
+          <li>Elaborazione del lutto</li>
+          <li>Difficolt&agrave; relazionali</li>
+          </ul>
+        </div>
+
+        <div class="area">
+          <div class="area-head"><svg width="34" height="34" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="14" r="5"/><path d="M7 34 c0-6 4-9 9-9 s9 3 9 9"/><circle cx="31" cy="17" r="4"/><path d="M26 33 c0-4.5 2.2-7 6-7 s6 2.5 6 7"/></svg><h3>Coppie</h3></div>
+          <p>Accompagno le coppie nel migliorare la comunicazione e affrontare le difficolt&agrave; relazionali, favorendo il dialogo e la comprensione reciproca.</p>
+          <ul class="svc-list">
+          <li>Comunicazione efficace</li>
+          <li>Gestione dei conflitti</li>
+          <li>Crisi di coppia</li>
+          <li>Separazione</li>
+          <li>Cambiamenti nelle diverse fasi del ciclo di vita familiare</li>
+          </ul>
+        </div>
+
+        <div class="area">
+          <div class="area-head"><svg width="34" height="34" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="22" cy="13" r="4"/><circle cx="12" cy="17" r="3.2"/><circle cx="32" cy="17" r="3.2"/><path d="M15 34 c0-4.5 3.2-7.5 7-7.5 s7 3 7 7.5"/><path d="M8 33 c0-3.6 2.4-6 5.5-6.2"/><path d="M36 33 c0-3.6-2.4-6-5.5-6.2"/></svg><h3>Laboratori sulle relazioni</h3></div>
+          <p>Mi piace lavorare con piccoli gruppi di bambini attraverso attivit&agrave; esperienziali che permettono di sviluppare competenze emotive e sociali.</p>
+          <ul class="svc-list">
+          <li>Riconoscere e comunicare le emozioni</li>
+          <li>Imparare a gestire i conflitti</li>
+          <li>Imparare ad ascoltare</li>
+          <li>Imparare a chiedere scusa e riparare una relazione</li>
+          <li>Cooperare e fare squadra</li>
+          <li>Sviluppare empatia e rispetto reciproco</li>
+          </ul>
+          <p class="area-quote">&laquo;Dietro ogni conflitto c'&egrave; un bisogno che aspetta di essere ascoltato.&raquo;</p>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="about">
+      <h2>Il mio metodo</h2>
+      <p class="lead">Ogni percorso nasce dall'incontro con la persona e dalla costruzione di una relazione di fiducia.</p>
+      <div class="method">
+        <div class="step"><span class="num">1</span><div class="body"><h3>Ascolto</h3><p>Accolgo ogni persona senza giudizio, creando uno spazio sicuro in cui sentirsi ascoltata.</p></div></div>
+        <div class="step"><span class="num">2</span><div class="body"><h3>Osservazione</h3><p>Osservo il funzionamento della persona all'interno delle sue relazioni, individuando risorse, bisogni e punti di forza.</p></div></div>
+        <div class="step"><span class="num">3</span><div class="body"><h3>Comprensione</h3><p>Insieme attribuiamo significato alle difficolt&agrave;, comprendendo ci&ograve; che stanno comunicando.</p></div></div>
+        <div class="step"><span class="num">4</span><div class="body"><h3>Intervento</h3><p>Costruiamo strategie personalizzate per favorire il cambiamento e il benessere.</p></div></div>
+        <div class="step"><span class="num">5</span><div class="body"><h3>Follow-up</h3><p>Monitoriamo insieme il percorso, consolidando i risultati raggiunti nel tempo.</p></div></div>
+      </div>
+      <p class="credo">&laquo;Dietro ogni difficolt&agrave; c'&egrave; una storia che merita di essere compresa. Ogni comportamento &egrave; una comunicazione che non ha ancora trovato parole.&raquo;</p>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="about">
+      <h2>Le mie competenze</h2>
+      <ul class="skills-list">
+        <li>Osservazione clinica con approccio sistemico-relazionale</li>
+        <li>Ascolto attivo ed empatico</li>
+        <li>Facilitazione del dialogo e della comunicazione</li>
+        <li>Mediazione dei conflitti</li>
+        <li>Progettazione di interventi di prevenzione e promozione della salute psicologica</li>
+        <li>Lavoro di rete con famiglie, scuole e servizi sanitari</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section class="about">
+      <h2>I valori che guidano il mio lavoro</h2>
+      <div class="values">
+        <p>Credo nell'<strong>empatia</strong>, nell'<strong>accoglienza</strong> e nel <strong>rispetto della storia</strong> di ogni persona.</p>
+        <p>Lavoro per costruire relazioni di fiducia, valorizzando le risorse individuali e familiari e promuovendo il benessere psicologico come parte integrante della salute della persona.</p>
+      </div>
+    </section>
   </div>
 
   <div class="wrap">
@@ -744,13 +785,16 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
   var vh = window.innerHeight || document.documentElement.clientHeight;
   var groups = [
     ['.hero > *', 60],
-    ['.ambiti-grid > .ambito', 70]
+    ['.ambiti-grid > .ambito', 70],
+    ['.areas > .area', 80],
+    ['.method > .step', 55]
   ];
   var singles = [
     '.about > p', '.about .credo', '.audience',
     'section > h2', '.ambiti .hint',
     '.quote-band blockquote', '.quote-band .qnote',
     '.map-card', '.map-caption', '.modality',
+    '.lead', '.skills-list', '.values',
     '.final-cta > *', 'footer .sig', 'footer p'
   ];
 

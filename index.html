@@ -52,6 +52,13 @@
     opacity: 0.85;
     margin-top: 8px;
   }
+  .hero-positioning {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(17px, 3.8vw, 21px);
+    color: var(--brown);
+    margin-top: 12px;
+  }
   .tagline {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -296,8 +303,9 @@
     }
     .hero > *:not(.hero-photo) { animation: heroRise 0.8s cubic-bezier(0.22, 0.61, 0.24, 1) both; }
     .hero > .logo-name   { animation-delay: 0.08s; }
-    .hero > .logo-ordine { animation-delay: 0.14s; }
-    .hero > .tagline     { animation-delay: 0.20s; }
+    .hero > .logo-ordine    { animation-delay: 0.14s; }
+    .hero > .hero-positioning { animation-delay: 0.18s; }
+    .hero > .tagline        { animation-delay: 0.22s; }
     .hero > .role        { animation-delay: 0.28s; }
     .hero > .wa-btn      { animation-delay: 0.34s; }
     .hero > .wa-note     { animation-delay: 0.40s; }
@@ -524,6 +532,7 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
 </svg>
       <div class="logo-name">Dott.ssa Renata Sorricchio</div>
       <div class="logo-ordine">Ordine delle Psicologhe e degli Psicologi d'Abruzzo n. 1191</div>
+      <div class="hero-positioning">Psicologa delle relazioni e della prevenzione</div>
 
       <p class="tagline">Uno spazio di ascolto per affrontare insieme difficoltà personali, relazionali, familiari e scolastiche.</p>
       <p class="role"><strong>Psicologa clinica</strong> · Ricevo su appuntamento · In presenza e online</p>
@@ -604,6 +613,40 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
           <p>Conoscersi meglio, dare significato alla propria storia</p>
         </div>
 
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 11 h26 a3 3 0 0 1 3 3 v12 a3 3 0 0 1-3 3 H21 l-7 5 v-5 H9 a3 3 0 0 1-3-3 V14 a3 3 0 0 1 3-3z"/>
+            <path d="M22 25.5 c-2.6-1.9-4.6-3.4-4.6-5.5 c0-1.4 1.1-2.5 2.5-2.5 c.85 0 1.5.4 2.1 1.1 c.6-.7 1.25-1.1 2.1-1.1 c1.4 0 2.5 1.1 2.5 2.5 c0 2.1-2 3.6-4.6 5.5z"/>
+          </svg>
+          <h3>Alfabetizzazione emotiva</h3>
+          <p>Emozioni e competenze socio-relazionali</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="15" cy="13" r="4"/>
+            <path d="M8 34 v-5 c0-3.9 3.1-7 7-7 s7 3.1 7 7 v5"/>
+            <circle cx="31" cy="18" r="3"/>
+            <path d="M26 34 v-4 c0-2.8 2.2-5 5-5 s5 2.2 5 5 v4"/>
+            <path d="M21 30 h5"/>
+          </svg>
+          <h3>Supporto alla genitorialità</h3>
+          <p>Accompagnare chi cresce dei figli</p>
+        </div>
+
+        <div class="ambito">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#6f4e3c" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="22" cy="13" r="4"/>
+            <circle cx="12" cy="17" r="3.2"/>
+            <circle cx="32" cy="17" r="3.2"/>
+            <path d="M15 34 c0-4.5 3.2-7.5 7-7.5 s7 3 7 7.5"/>
+            <path d="M8 33 c0-3.6 2.4-6 5.5-6.2"/>
+            <path d="M36 33 c0-3.6-2.4-6-5.5-6.2"/>
+          </svg>
+          <h3>Disagio scolastico e inclusione</h3>
+          <p>Prevenzione e promozione dell'inclusione</p>
+        </div>
+
       </div>
       <p class="hint">Il primo contatto serve a capire insieme se e come posso esserti utile.</p>
     </section>
@@ -613,15 +656,19 @@ m2399 -345 c0 -6 15 -37 34 -68 47 -79 49 -98 25 -203 -42 -183 -62 -245 -118
     <section class="about">
       <h2>Il mio approccio</h2>
       <p class="section-sub">Prevenire prima che curare</p>
+      <p>Le relazioni sono il luogo in cui cresciamo, impariamo e affrontiamo le sfide della vita. Quando una relazione entra in difficoltà, può diventare fonte di sofferenza; quando viene compresa e valorizzata, può trasformarsi in una <strong>risorsa di benessere</strong>.</p>
       <p>Non serve stare male per rivolgersi a una psicologa. Si può iniziare un percorso anche per <strong>conoscersi meglio</strong>, dare un senso a ciò che si è vissuto, <strong>prevenire</strong> invece che curare: fermarsi a capire, prima che il peso diventi troppo.</p>
       <p class="credo">«Prendersi cura di sé non è egoismo, ma un gesto di amore verso se stessi: il primo passo per stare bene insieme agli altri.»</p>
       <p>Lavoro con uno sguardo <strong>sistemico-relazionale</strong>: le difficoltà non sono problemi da correggere, ma segnali da comprendere dentro le relazioni — in famiglia, a scuola, nella coppia. Nel lavoro integro tecniche di <strong>rilassamento</strong>, <strong>training autogeno</strong> e pratiche di <strong>consapevolezza</strong>.</p>
+      <p>Accompagno <strong>bambini, adolescenti, adulti, coppie, famiglie e comunità educative</strong> a ritrovare nuovi equilibri, promuovendo il benessere psicologico attraverso l'ascolto, la prevenzione e la cura delle relazioni.</p>
       <p class="credo">«Dietro ogni difficoltà c'è una storia che merita di essere compresa. Ogni comportamento è una comunicazione che non ha ancora trovato parole.»</p>
+      <p class="credo">«Ogni storia merita di essere raccontata.»</p>
       <div class="audience">
         <span>Bambini e adolescenti</span>
         <span>Genitori</span>
         <span>Coppie e famiglie</span>
         <span>Adulti</span>
+        <span>Comunità educative</span>
       </div>
     </section>
   </div>
